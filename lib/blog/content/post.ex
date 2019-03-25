@@ -5,11 +5,11 @@ defmodule Blog.Content.Post do
   alias Blog.{Accounts, Content}
 
   schema "posts" do
-    field :body, :string
-    field :published_at, :naive_datetime
-    field :title, :string
+    field(:body, :string)
+    field(:published_at, :naive_datetime)
+    field(:title, :string)
 
-    belongs_to :author, Accounts.User
+    belongs_to(:author, Accounts.User)
 
     timestamps()
   end

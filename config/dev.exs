@@ -39,8 +39,14 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :blog, Blog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "alexanderschramm",
+  password: "",
   database: "blog_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :tapper,
+  system_id: "absinthe",
+  reporter: Tapper.Reporter.Zipkin
+
+config :tapper, Tapper.Reporter.Zipkin, collector_url: 'http://localhost:9411/api/v1/spans'
